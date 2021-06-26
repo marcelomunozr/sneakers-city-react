@@ -15,7 +15,6 @@ const getSneakers = async () => {
 
 const getSizes = async () => {
     const resp = await getSizeReq.get('/');
-    console.log('responseSizes', resp);
     return resp;
 }
 

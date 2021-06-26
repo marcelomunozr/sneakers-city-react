@@ -1,5 +1,8 @@
 import React from 'react'
 import {
+    Link,
+} from "react-router-dom";
+import {
     Navbar,
     Container,
     Nav,
@@ -18,7 +21,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">{commonLabels.NAVBAR.INICIO}</Nav.Link>
-                        <Nav.Link href="#seccion">{commonLabels.NAVBAR.SECCION}</Nav.Link>
+                        <Nav.Link href="/seccion">{commonLabels.NAVBAR.SECCION}</Nav.Link>
                         <NavDropdown title={commonLabels.NAVBAR.CATEGORIAS} id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#categoria/3.1">{commonLabels.NAVBAR.CATEGORIA_1}</NavDropdown.Item>
                             <NavDropdown.Item href="#categoria/3.2">{commonLabels.NAVBAR.CATEGORIA_2}</NavDropdown.Item>

@@ -2,21 +2,16 @@ import { memo, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import {
     getSneakersThunk,
-    deleteSneakerThunk,
 } from '../actions/sneakers';
-import {
-    getSizes
-} from '../services/sneakers';
 import SneakerProfile from '../components/SneakerProfile';
-// import InputSearch from '../components/InputSearch';
 import {
 	Container,
 	Row,
     Spinner,
-    Alert,
     Button,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import labels from '../constants/labels';
 
 export const mapStateToProps = (state) => {
     const {
@@ -38,45 +33,29 @@ const Sneakers = ({
     dispatch,
     sneakers,
     isLoadingSneakers,
-    errorSneakers,
+    errorSneakers, // TODO: agregar alert en caso de errorServicio
 }) => {
-    const [searchSneaker, setSearchSneaker] = useState('');
+    const [sneakersToShow, setSneakersToShow] = useState(10);
 
+    /**
+     * Ejecuta método que setea las zapatillas en storage con redux
+     */
     const initData = async () => {
         dispatch(getSneakersThunk());
-        await getSizes();
-    };
-
-    const filteredSneakers = () => {
-        if (sneakers.length && searchSneaker) {
-            const sneakerFilter = sneakers.filter(sneaker => {
-                return sneaker.name.first.toLowerCase().includes( searchSneaker.toLowerCase() );
-            })
-            return sneakerFilter;
-        }
-        return sneakers;
-    };
-
-    const handleDeleteSneaker = (sneakerToDelete) => () => {
-        dispatch(deleteSneakerThunk(sneakerToDelete, sneakers));
     };
 
 	useEffect(() => {
         initData();
     }, []);
 
-    // const renderFormSearch = () => {
-    //     return (
-    //         <InputSearch
-    //             searchSneaker={searchSneaker}
-    //             setSearchSneaker={setSearchSneaker}
-    //         />
-    //     );
-    // };
-
+    /**
+     * Renderiza listado de zapatillas
+     * En primera instancia carga 10 items que es el valor inicial de sneakersToShow
+     * El state sneakersToShow va aumentando si el usuario lo necesita
+     */
     const renderSneakersList = () => {
         if (sneakers?.length) {
-            const filterSneakers = filteredSneakers();
+            const filterSneakers = sneakers.slice(0, sneakersToShow);
             return (
                 <Row>
                     {
@@ -85,7 +64,6 @@ const Sneakers = ({
                                 <SneakerProfile
                                     sneaker={sneaker}
                                     key={index}
-                                    handleDeleteSneaker={handleDeleteSneaker}
                                 />)
                         })
                     }
@@ -94,26 +72,24 @@ const Sneakers = ({
         }
     };
 
+    /**
+     * Renderiza el button que carga más contenido
+     * @returns button que aumenta en 10 la cantidad de items a visualizar
+     */
+    const renderLoadMore = () => (
+        <div className="d-flex justify-content-center mt-4 mb-4">
+            <Button onClick={() => setSneakersToShow(sneakersToShow + 6)} variant="dark">
+                {labels.BUTTONS.CARGAR_MAS}
+            </Button>
+        </div>
+    );
+
+    /**
+     * Renderiza un loading si no ha cargado la data de la api
+     * Cuando carga la data isLoading pasa a false y renderiza el contenido
+     * @returns contenido de la vista de todas las zapatillas sneakers
+     */
 	const renderSneakersView = () => {
-        /* TODO:
-         * controlar error al obtener datos
-        if (errorSneakers) {
-            <Container className="App-content">
-                <Alert variant="danger" onClose={() => initData()} dismissible>
-                    <Alert.Heading>Error al buscar datos</Alert.Heading>
-                    <p>
-                        Puede que los servicios esten presentando intermitencia. Por favor, intente nuevamente
-                    </p>
-                    <hr />
-                    <div className="d-flex justify-content-end">
-                        <Button onClick={() => initData()} variant="success">
-                            Reintentar
-                        </Button>
-                    </div>
-                </Alert>
-            </Container>
-        }
-        */
         if (isLoadingSneakers) {
             return (
                 <Container className="App-content">
@@ -123,8 +99,8 @@ const Sneakers = ({
         }
         return (
             <Container>
-                {/* {renderFormSearch()} */}
                 {renderSneakersList()}
+                {sneakers.length > sneakersToShow && renderLoadMore()}
             </Container>
         );
     };
