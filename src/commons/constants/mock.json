@@ -1,0 +1,119 @@
+[
+    {
+        "id": "60d6606507449d7db6c2bb44",
+        "marca": "Nike",
+        "modelo": "Air Max Furyosa",
+        "precio": 136990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/378e41ec-6b30-48df-8173-ff58b5ea38ff/fecha-de-lanzamiento-del-air-max-furyosa-silver-and-black.jpg",
+        "fechaLanzamiento": "27/6/2021",
+        "descripcion": "Air Max Furyosa para mujer Plata y negro $136.990 Disponible el 08-07 a las 6:00 Este nuevo estilo combina la estética extraordinaria del Air Max de los 90 con la comodidad del siglo XXI."
+    },
+    {
+        "id": "60d6620507449d7db6c2bb45",
+        "marca": "Nike",
+        "modelo": "Tech White",
+        "precio": 164990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/7bc8e33d-276e-4757-a52c-5e5713aed917/fecha-de-lanzamiento-del-air-jordan-4-tech-white.jpg",
+        "fechaLanzamiento": "28/6/2021",
+        "descripcion": "El  Air Jordan 4 aporta un toque innovador al modelo histórico, con una parte superior de cuero auténtico blanco, un logotipo Jumpman en el talón y la lengüeta, y un acabado de cemento de inspiración clásica en la entresuela y los ojales."
+    },
+    {
+        "id": "60d6626f07449d7db6c2bb46",
+        "marca": "Nike",
+        "modelo": "BeTrue",
+        "precio": 114990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/761b6d96-e3c5-4d68-839b-e63e4ff70fa9/fecha-de-lanzamiento-del-air-max-pre-day-betrue.jpg",
+        "fechaLanzamiento": "11/8/2021",
+        "descripcion": "Air Max Pre-Day BeTrue $114.990 Disponible el 01-07 a las 6:00 Reconocemos la necesidad de que todos sepan que tienen un equipo. Incluso cuando estamos solos, seguimos juntos. Somos una comunidad que trabaja unida hacia un futuro."
+    },
+    {
+        "id": "60d662c607449d7db6c2bb47",
+        "marca": "Nike",
+        "modelo": "Earthscape",
+        "precio": 129990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/7d2a3672-a02b-4a62-ac9a-9b8c45d71a7b/fecha-de-lanzamiento-del-air-huarache-earthscape.jpg",
+        "fechaLanzamiento": "15/9/2021",
+        "descripcion": "Las manos originales de Tinker Hatfield dieron vida al Air Huarache. El modelo se rediseñó para mejorar el rendimiento tras su debut en 1991, y para ello se planteó una pregunta: ¿Ya abrazaste a tus pies hoy?"
+    },
+    {
+        "id": "60d6632407449d7db6c2bb48",
+        "marca": "Nike",
+        "modelo": "Dark Denim",
+        "precio": 152990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/060b0b8a-28d0-41ef-8a40-df9b7d0dce1d/fecha-de-lanzamiento-del-air-max-96-ii-dark-denim.jpg",
+        "fechaLanzamiento": "21/9/2021",
+        "descripcion": "Creado originalmente en 1996 por el famoso diseñador Sergio Lozano, este estilo retro rompió el molde al incorporar la tecnología Air Max en una confección de panal de abeja."
+    },
+    {
+        "id": "60d6634c07449d7db6c2bb49",
+        "marca": "Nike",
+        "modelo": "Zebra",
+        "precio": 152990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/3047f9bb-23e2-4e37-ae12-ba695a36ed1d/fecha-de-lanzamiento-del-dunk-low-zebra.jpg",
+        "fechaLanzamiento": "22/9/2021",
+        "descripcion": "Aunque su diseño se creó en un principio para la cancha de básquetbol, el Dunk acabó adueñándose de las calles y el resto ya es historia. Más de 35 años después de su debut"
+    },
+    {
+        "id": "60d6639007449d7db6c2bb4a",
+        "marca": "Nike",
+        "modelo": "Platino puro",
+        "precio": 100990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/431dad98-032f-431e-bfb9-8f5f6d402f2a/fecha-de-lanzamiento-del-calzado-air-max-pre-day-pure-platinum.jpg",
+        "fechaLanzamiento": "25/9/2021",
+        "descripcion": "Nos inspiramos en el calzado revolucionario que ayudó a Nike a forjar su marca en las pistas de atletismo. Enmarcado en un diseño de concepto reductivo."
+    },
+    {
+        "id": "60d663f407449d7db6c2bb4b",
+        "marca": "Nike",
+        "modelo": "Beach Axe",
+        "precio": 80990,
+        "img": "https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/02044b01-b2f6-4aeb-8b23-f24f8dcb8c2e/fecha-de-lanzamiento-del-air-max-96-ii-beach.jpg",
+        "fechaLanzamiento": "25/9/2021",
+        "descripcion": "Veinticinco años después, el look regresa con el esquema de colores y las conocidas características retro del modelo original. Celebra el aniversario de este clásico mientras agregas otro ícono a tu colección de Air Max."
+    },
+    {
+        "id": "60d6643907449d7db6c2bb4c",
+        "marca": "Nike",
+        "modelo": "SB Dunk High Pro",
+        "precio": 69990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/7b8d191e-97d6-4c1c-ad85-d114ad5fbd97/fecha-de-lanzamiento-del-sb-dunk-high-pro-maize-and-black.jpg",
+        "fechaLanzamiento": "25/9/2021",
+        "descripcion": "Antes de que su suela tocara una tabla de skateboarding, el Dunk dejó su huella en la cancha como calzado de alto rendimiento de básquetbol. Con el tiempo, quienes practicaban skateboarding lo adoptaron."
+    },
+    {
+        "id": "60d6647507449d7db6c2bb4d",
+        "marca": "Nike",
+        "modelo": "Air Jordan 4 x UNION LA",
+        "precio": 169990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/5d309678-63cd-44a5-b7ec-d47dddd97551/fecha-de-lanzamiento-del-air-jordan-4-x-union-la-desert-moss.jpg",
+        "fechaLanzamiento": "27/9/2021",
+        "descripcion": "Para Chris Gibbs, dueño de UNION LA, la cultura del básquetbol tiene una relación directa con la intensidad de la moda urbana."
+    },
+    {
+        "id": "60d6649d07449d7db6c2bb4e",
+        "marca": "Nike",
+        "modelo": "Dunk Low",
+        "precio": 129990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/3c48275e-ab24-45e3-979f-d62d47da80dc/fecha-de-lanzamiento-del-dunk-low-purple-pulse-para-mujer.jpg",
+        "fechaLanzamiento": "11/10/2021",
+        "descripcion": "Aunque su diseño se creó en un principio para la cancha de básquetbol, el Dunk acabó adueñándose de las calles y el resto ya es historia."
+    },
+    {
+        "id": "60d664ce07449d7db6c2bb4f",
+        "marca": "Nike",
+        "modelo": "Air Huarache",
+        "precio": 141990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/b63554bf-d9b7-4315-8cbc-e4a078fe15d2/fecha-de-lanzamiento-del-air-huarache-black-and-white.jpg",
+        "fechaLanzamiento": "12/10/2021",
+        "descripcion": "Nacido de las ingeniosas manos de Tinker Hatfield, el Air Huarache redefinió el rendimiento aerodinámico en su debut en 1991."
+    },
+    {
+        "id": "60d664f007449d7db6c2bb50",
+        "marca": "Nike",
+        "modelo": "SB Dunk High Pro",
+        "precio": 111990,
+        "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/13162fde-1ec5-4277-b06b-4b2f4776182a/fecha-de-lanzamiento-del-sb-dunk-high-pro-ishod-wair-x-magnus-walker.jpg",
+        "fechaLanzamiento": "15/10/2021",
+        "descripcion": "Ishod Wair es célebre por sus mágicas habilidades sobre la tabla de skateboarding. Pero cuando no está en la pista de patinaje."
+    }
+]
