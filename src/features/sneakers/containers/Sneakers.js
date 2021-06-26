@@ -4,6 +4,9 @@ import {
     getSneakersThunk,
     deleteSneakerThunk,
 } from '../actions/sneakers';
+import {
+    getSizes
+} from '../services/sneakers';
 import SneakerProfile from '../components/SneakerProfile';
 // import InputSearch from '../components/InputSearch';
 import {
@@ -39,9 +42,10 @@ const Sneakers = ({
 }) => {
     const [searchSneaker, setSearchSneaker] = useState('');
 
-    const initData = () => {
+    const initData = async () => {
         dispatch(getSneakersThunk());
-    }
+        await getSizes();
+    };
 
     const filteredSneakers = () => {
         if (sneakers.length && searchSneaker) {

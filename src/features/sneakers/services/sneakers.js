@@ -1,17 +1,21 @@
 import axios from 'axios';
 
-const getUsers = axios.create({
+const getSneakerReq = axios.create({
     baseURL: "/api/sneakers",
-    headers: {
-        withCredentials: false,
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-    }
+});
+
+const getSizeReq = axios.create({
+    baseURL: "/api/sizes",
 });
 
 const getSneakers = async () => {
-    const resp = await getUsers.get('/');
-    console.log('response', resp);
+    const resp = await getSneakerReq.get('/');
+    return resp;
+}
+
+const getSizes = async () => {
+    const resp = await getSizeReq.get('/');
+    console.log('responseSizes', resp);
     return resp;
 }
 
@@ -23,5 +27,6 @@ const deleteSneaker = async (sneaker) => {
 
 export {
     getSneakers,
+    getSizes,
     deleteSneaker,
 };

@@ -6,7 +6,7 @@ import Footer from './commons/components/Footer';
 
 const  App = () => {
   return (
-    <div class="container-app">
+    <div className="container-app">
       <Header />
       <Senakers />
       {/* <Footer /> */}
