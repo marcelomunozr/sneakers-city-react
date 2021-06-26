@@ -2,20 +2,12 @@ import { memo, useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { connect } from 'react-redux';
 import {
-    getSneakersThunk,
-    deleteSneakerThunk,
-} from '../actions/sneakers';
-import {
     getSizes
 } from '../services/sneakers';
 import SneakerProfile from '../components/SneakerProfile';
-// import InputSearch from '../components/InputSearch';
 import {
 	Container,
-	Row,
     Spinner,
-    Alert,
-    Button,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -35,16 +27,16 @@ export const mapStateToProps = (state) => {
     };
 };
 
-const Sneaker = ({
-    dispatch,
-    sneakers,
-    isLoadingSneakers,
-    errorSneakers,
-}) => {
+const Sneaker = () => {
     const [loading, setLoading] = useState(true);
     const [sizes, setSize] = useState({});
     const { state } = useLocation();
 
+    /**
+     * Método que inicializa data necesaria para la vista detalle de una zapatilla
+     * Obtiene los tamaños y cantidades por tamaño de zapatillas
+     * Se guarda la respuesta en un state
+     */
     const initData = async () => {
         const sizesResp = await getSizes();
         setSize(sizesResp.data)
@@ -55,6 +47,10 @@ const Sneaker = ({
         initData();
     }, [])
 
+    /**
+     * Renderiza el contenido de la vista individual con detalle de la zapatilla que se envia por state
+     * @returns conteindo vista
+     */
 	const renderSneakerView = () => {
         if (loading){
             return (

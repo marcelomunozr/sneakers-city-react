@@ -1,6 +1,5 @@
 import {
     getSneakers,
-    deleteSneaker,
 } from '../services/sneakers';
 import {
     SET_SNEAKERS,
@@ -34,7 +33,8 @@ const clearAllSneakers = () => ({
 });
 
 /**
- * Obtiene zapatillas
+ * Obtiene zapatillas desde service
+ * Seteo de zapatillas en el storage 
  */
 const getSneakersThunk = () => async (dispatch) => {
     const response = await getSneakers();
@@ -52,22 +52,6 @@ const getSneakersThunk = () => async (dispatch) => {
     return isCancel;
 };
 
-/**
- * TODO:
- * Eliminar zapatilla
- */
-const deleteSneakerThunk = (sneakerData, sneakers) => async (dispatch) => {
-    /* TODO: 
-     * eliminar dato desde la API
-     * controlar respuesta al eliminar
-    const response = await deleteSneaker(sneakerData);
-    */
-   const { id } = sneakerData;
-   const sneakersAfterDelete = sneakers.filter(sneaker => sneaker.id !== id);
-   dispatch(setSneakers(sneakersAfterDelete));
-};
-
-
 export {
     setSneakers,
     setIsLoadingSneakers,
@@ -76,5 +60,4 @@ export {
     clearAllSneakers,
 
     getSneakersThunk,
-    deleteSneakerThunk,
 };

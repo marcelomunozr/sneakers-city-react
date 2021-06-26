@@ -11,6 +11,7 @@ const labels = {
 
     },
     BUTTONS: {
+        CARGAR_MAS: 'ver más zapatillas',
         ADD: 'Agregar al carro',
         DELETE: 'Eliminar',
     }

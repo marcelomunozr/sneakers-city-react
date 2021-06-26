@@ -33,7 +33,6 @@
   }
 }
 
-
 /*
  * Custom styles
 */
@@ -58,7 +57,6 @@ body{
 
 .container-app{
   min-height: 90vh;
-  /* background-color: #212529; */
 }
 
 .container-app .card{
@@ -66,7 +64,6 @@ body{
 }
 
 .container-app .card-img-top{
-  /* background-color: #d2d2d2; */
   border-bottom: 2px solid #212529;
 }
 

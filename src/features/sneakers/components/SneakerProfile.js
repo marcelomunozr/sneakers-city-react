@@ -14,12 +14,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Sneakers.css';
 import labels from '../constants/labels';
 
+/**
+ * Componente funcional que se reutiliza en 2 secciones:
+ * - para el listado de zapatillas del home
+ * - para el detalle de zapatilla
+ * @param {props} props que llegan al componente 
+ * @returns componente SneakerProfile detalle de la zapatilla
+ */
 const SneakerProfile = ({
     sneaker,
     sneakerSelected,
     sizes,
-    handleDeleteSneaker,
 }) => {
+    const [units, setUnits] = useState(null);
     const isSingleSneaker = typeof sneakerSelected !== "undefined";
     const theSneakerSelected = sneaker || sneakerSelected.sneaker;
     const {
@@ -35,13 +42,21 @@ const SneakerProfile = ({
         pathname: `/sneaker/${sneaker?.id}`,
         state: { sneaker }
     };
-    const [units, setUnits] = useState(null);
 
+    /**
+     * Setea la cantidad de zapatilla dependiendo de la talla seleccionada y estás tallas están divididas por zapatilla
+     * @param {object} event opción del select tamaño zapatilla
+     * @param {object} sizesOfSneaker obj tamaños de las zapatillas
+     */
     const selectedSize = (event, sizesOfSneaker) => {
         const { cantidad } = sizesOfSneaker.find(unit => event.target.value === unit.id);
         setUnits(cantidad);
     }
 
+    /**
+     * Método que retorna la imagen junto con link o sola dependiendo si es la vista detalle de una zapatilla o el listado 
+     * @returns Link o Img dependiendo de la vista que se encuentra
+     */
     const renderImageSneaker = () => {
         const image = (<Card.Img variant="top" src={img} />);
         if (!isSingleSneaker) {
@@ -54,6 +69,10 @@ const SneakerProfile = ({
         return image;
     }
 
+    /**
+     * Renderiza opciones de formulario seleccionadas por el usuario
+     * Esté método solo aparece cuando es la pantalla detalle de zapatilla
+     */
     const renderSingleOptions = () => {
         const sizesOfSneaker = sizes.filter(size => size.sneaker === theSneakerSelected.id);
         return (
@@ -101,6 +120,11 @@ const SneakerProfile = ({
         );
     };
 
+    /**
+     * Renderiza contenido que se muestra en la card para listado de todas las zapatillas y vista detalle de una
+     * Muestra contenido dependiendo del valor de la constante isSingleSneaker
+     * @returns CardBody
+     */
     const renderBody = () => (
         <Card.Body>
             <Card.Title>{modelo}</Card.Title>
@@ -112,6 +136,10 @@ const SneakerProfile = ({
         </Card.Body>
     );
 
+    /**
+     * Renderiza cuando es la vista detalle
+     * @returns deatlle zapatilla
+     */
     const renderSingleSneaker = () => (
         <Row>
             <Col sm={6} md={4} lg={4}>
@@ -127,6 +155,10 @@ const SneakerProfile = ({
         </Row>
     );
 
+    /**
+     * Renderiza cuando es la vista detalle
+     * @returns Todas las zapatillas dependiendo de la validacion isSingleSneaker
+     */
     const renderSneakerProfile = () => {
         if (isSingleSneaker) {
             return renderSingleSneaker();
