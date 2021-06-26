@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,6 +38,7 @@
  * Custom styles
 */
 body{
+  font-family: 'Montserrat', sans-serif;
   min-height: 90vh;
 }
 
@@ -45,7 +48,7 @@ body{
 
 .container-app{
   min-height: 90vh;
-  background-color: #212529;
+  /* background-color: #212529; */
 }
 
 .container-app .card{
@@ -53,8 +56,21 @@ body{
 }
 
 .container-app .card-body{
-  background-color: #d2d2d2;
+  /* background-color: #d2d2d2; */
   border-top: 2px solid #212529;
+}
+
+.container-app .card-title{
+  font-weight: bold;
+}
+
+.container-app .card-text{
+  font-size: 0.875rem;
+}
+
+.container-app .card-text.txt-price{
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .jumbotron {
