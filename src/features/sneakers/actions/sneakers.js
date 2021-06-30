@@ -7,6 +7,7 @@ import {
     SET_ERROR_SNEAKERS,
     CLEAR_ERROR_SNEAKERS,
     CLEAR_ALL_SNEAKERS,
+    SET_CART,
 } from './types';
 
 const setSneakers = sneakers => ({
@@ -30,6 +31,11 @@ const clearErrorSneakers = () => ({
 
 const clearAllSneakers = () => ({
     type: CLEAR_ALL_SNEAKERS,
+});
+
+const setCart = cart => ({
+    type: SET_CART,
+    cart,
 });
 
 /**
@@ -58,6 +64,7 @@ export {
     setErrorSneakers,
     clearErrorSneakers,
     clearAllSneakers,
-
     getSneakersThunk,
+
+    setCart,
 };

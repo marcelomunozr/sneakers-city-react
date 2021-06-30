@@ -19,15 +19,18 @@ export const mapStateToProps = (state) => {
             errorSneakers,
         },
     } = state;
+    const reduxState = state;
     return {
-        state,
+        reduxState,
         sneakers,
         isLoadingSneakers,
         errorSneakers,
     };
 };
 
-const Sneaker = () => {
+const Sneaker = ({
+    reduxState,
+}) => {
     const [loading, setLoading] = useState(true);
     const [sizes, setSize] = useState({});
     const { state } = useLocation();
@@ -46,6 +49,10 @@ const Sneaker = () => {
     useEffect(() => {
         initData();
     }, [])
+
+    useEffect(() => {
+        console.log('reduxState', reduxState);
+    }, [reduxState])
 
     /**
      * Renderiza el contenido de la vista individual con detalle de la zapatilla que se envia por state

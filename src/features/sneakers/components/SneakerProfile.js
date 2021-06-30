@@ -1,4 +1,10 @@
-import React, { useState } from 'react'
+import React,
+{
+    memo,
+    useState,
+    useEffect,
+} from 'react'
+import { connect } from 'react-redux';
 import {
     Row,
 	Col,
@@ -10,9 +16,17 @@ import {
 import {
     Link,
 } from "react-router-dom";
+import { setCart } from '../actions/sneakers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Sneakers.css';
 import labels from '../constants/labels';
+
+export const mapStateToProps = (state) => {
+    const { shoppingCart } = state;
+    return {
+        shoppingCart,
+    };
+};
 
 /**
  * Componente funcional que se reutiliza en 2 secciones:
@@ -22,11 +36,15 @@ import labels from '../constants/labels';
  * @returns componente SneakerProfile detalle de la zapatilla
  */
 const SneakerProfile = ({
+    dispatch,
     sneaker,
     sneakerSelected,
     sizes,
+    shoppingCart,
 }) => {
     const [units, setUnits] = useState(null);
+    const [sizeSelected, setSizeSelected] = useState(null)
+    const [cartItems, setCartItems] = useState([]);
     const isSingleSneaker = typeof sneakerSelected !== "undefined";
     const theSneakerSelected = sneaker || sneakerSelected.sneaker;
     const {
@@ -49,7 +67,8 @@ const SneakerProfile = ({
      * @param {object} sizesOfSneaker obj tamaños de las zapatillas
      */
     const selectedSize = (event, sizesOfSneaker) => {
-        const { cantidad } = sizesOfSneaker.find(unit => event.target.value === unit.id);
+        const { id, cantidad } = sizesOfSneaker.find(unit => event.target.value === unit.id);
+        setSizeSelected(id);
         setUnits(cantidad);
     }
 
@@ -68,6 +87,22 @@ const SneakerProfile = ({
         }
         return image;
     }
+
+
+    const addItemCart = () => {
+        console.log('SHOPPING CART', shoppingCart);
+        const objToCart = {
+            itemSelected: theSneakerSelected.id,
+            sizeItem: sizeSelected,
+        }
+        const auxCart = [...cartItems, objToCart];
+        setCartItems(auxCart);
+        dispatch(setCart(auxCart));
+    };
+
+    useEffect(() => {
+        console.log('TENTE', cartItems);
+    }, [cartItems])
 
     /**
      * Renderiza opciones de formulario seleccionadas por el usuario
@@ -109,7 +144,8 @@ const SneakerProfile = ({
                         <Col xs="auto">
                             <Button
                                 variant="dark"
-                                // onClick={}
+                                onClick={addItemCart}
+                                disabled={!sizeSelected}
                             >
                                 {labels.BUTTONS.ADD}
                             </Button>
@@ -176,4 +212,4 @@ const SneakerProfile = ({
     return renderSneakerProfile();
 };
 
-export default SneakerProfile;
+export default connect(mapStateToProps)(memo(SneakerProfile));
